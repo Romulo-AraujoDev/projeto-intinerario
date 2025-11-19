@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>E-DUCA WEB | Catálogo de Livros Educacionais</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head> 
+<body>
+    <header class="main-header">    
+        <div class="header-content">        
+            <a href="#home" class="logo"><i class="fas fa-graduation-cap"></i> E-DUCA WEB</a>                
+            <input type="checkbox" id="menu-toggle">        
+            <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>        
+            <nav class="main-nav">            
+                <ul>                
+                    <li><a href="#home">Início</a></li>                                
+                    <li class="dropdown">                    
+                        <a href="#">Categorias <i class="fas fa-caret-down"></i></a>                    
+                        <ul class="dropdown-content">                        
+                            <li><a href="#" onclick="document.getElementById('searchInput').value='Literatura Clássica'; filtrarLivros();">Literatura Clássica</a></li>                        
+                            <li><a href="#" onclick="document.getElementById('searchInput').value='Desenvolvimento Social'; filtrarLivros();">Desenvolvimento Social</a></li>                        
+                            <li><a href="#" onclick="document.getElementById('searchInput').value='TI e Inclusão Digital'; filtrarLivros();">TI e Inclusão Digital</a></li>                        
+                            <li><a href="#" onclick="document.getElementById('searchInput').value=''; filtrarLivros();">Todas as Obras</a></li>                    
+                        </ul>                
+                    </li>                                
+                    <li><a href="#catalogo">Catálogo Completo</a></li>                
+                    <li><a href="#sobre">Sobre o Projeto</a></li>                
+                    <li><a href="contato.html">Contato</a></li>             
+                </ul>        
+            </nav>    
+        </div>
+    </header>
+    <main>    
+        <section id="home" class="hero-section">        
+            <h1><i class="fas fa-chalkboard-teacher"></i> Educação e Tecnologia para um Futuro Melhor</h1>        
+            <p>Seu recurso digital para obras essenciais de desenvolvimento social, literatura e cidadania digital.</p>    
+        </section>        
+        
+        <div id="secoes-container" class="main-content-wrapper">        
+            <h2><i class="fas fa-th-large"></i> Destaques por Categoria</h2>
+        </div>    
+        
+        <section id="catalogo" class="search-section">        
+            <h2><i class="fas fa-search"></i> Consulta Rápida de Livros</h2>        
+            <div class="search-container">            
+                <input type="text" id="searchInput" placeholder="Buscar por título, autor ou categoria..." value="">            
+                <button onclick="filtrarLivros()"><i class="fas fa-search"></i> Buscar</button>        
+            </div>        
+            <p class="search-tip">Use a busca acima ou clique nas categorias para refinar o catálogo completo.</p>    
+        </section>
+        
+        <section class="livros-section">        
+            <h2 id="catalogo-completo"><i class="fas fa-book-open"></i> Catálogo Completo de Obras</h2>        
+            <div id="livros-container" class="livros-container">            
+            </div>    
+        </section>
+        
+        <section id="sobre" class="about-section">        
+            <h2><i class="fas fa-info-circle"></i> Sobre o Projeto Extensionista</h2>        
+            <p>Este projeto visa democratizar o acesso a resumos de obras literárias e educacionais, fomentando o desenvolvimento social através do conhecimento. Desenvolvido como parte do Itinerário Extensionista, ele busca oferecer uma ferramenta prática e acessível para estudantes do Ensino Médio e interessados em aprofundar seus estudos, conectando a tecnologia à educação de forma significativa.</p>        
+            <p>Acreditamos que a educação é a base para o progresso individual e coletivo, e esta plataforma é nossa contribuição para facilitar essa jornada de aprendizado.</p>    
+        </section>
+    </main>
+    
+    <footer>    
+        <p>&copy; 2025 - Projeto Itinerário Extensionista | Sistemas para Internet</p>    
+        <div class="social-icons">        
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>        
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>    
+        </div>
+    </footer>
+    
+    <div id="modal-resumo" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal()">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <div id="modal-body">
+            </div>
+            <p class="modal-footer-tip">O resumo completo está sendo exibido na tela.</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body> 
+</html>
